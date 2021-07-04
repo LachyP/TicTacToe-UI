@@ -2,7 +2,7 @@ This is a program written in C++ that can play tic-tac-toe based on the minimax 
 
 It is compiled into the program file tictactoe.bin using the makefile with the command:
 
-          make tictactoe
+    make tictactoe
   
 This can then be executed using the following command:
   
@@ -15,7 +15,9 @@ the input variable [path] is the path to an output text file.
 
 Raster scanning is used to encode a board state, scanning the board
 from left to right, top to bottom, for example the board state:
-  o---x----
+
+    o---x----
+    
 is equivalent to a 'o' in the top left corner of the board, and
 an 'x' in the middle space of the board.
 Blank spaces on the board are represented by the '-' character.
