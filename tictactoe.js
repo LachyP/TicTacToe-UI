@@ -5,10 +5,12 @@ function insertChar(elem){
     if(maxsturn){
         char = "x";
         maxsturn = false;
+        document.getElementById("whoseturn").innerHTML="Player 2's turn";
     }
     else{
         char = "o";
         maxsturn = true;
+        document.getElementById("whoseturn").innerHTML="Player 1's turn";
     }
     document.getElementsByClassName("cell")[elem].innerHTML=char;
 
