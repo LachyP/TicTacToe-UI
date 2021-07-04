@@ -26,3 +26,12 @@ function loadBoardState(state){
         }
     }
 }
+
+function resetBoard(){
+    document.getElementById("whoseturn").innerHTML="Player 1's turn";
+    maxsturn = true;
+
+    for(var i = 0; i < 9; i++){
+        document.getElementsByClassName("cell")[i].innerHTML=" ";
+    }
+}
