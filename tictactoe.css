@@ -1,0 +1,28 @@
+#center {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin: -175px 0 0 -200px;
+}
+.grid {
+    display:grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+
+}
+.grid > .cell{
+    background-color: #eee;
+    text-align: center;
+    /*we set the lines height to the same height as the containing box element, vertically aligning the characters*/
+    line-height: 150px;
+    font-size: 50px
+}
+
+.grid > .cell:nth-child(odd){
+    background-color: #ddd
+}
+
+.grid > .cell:hover{
+    background-color: #ccc;
+}
+
