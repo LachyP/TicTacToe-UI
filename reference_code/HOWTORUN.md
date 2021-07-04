@@ -1,6 +1,7 @@
 This is a program written in C++ that can play tic-tac-toe based on the minimax algorithm
 
 It is compiled into the program file tictactoe.bin using the makefile:
+
   make tictactoe
 This can then be executed using the following command:
   ./tictactoe.bin [state] [path] prune [ply]
