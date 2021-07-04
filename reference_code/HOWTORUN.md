@@ -52,7 +52,11 @@ In an attempt to speed up this algorithm even further, early termination has bee
 [ply] is used to tell the program the maximum number of moves ahead it can look at. Because this often results in board states that are not
 terminal, the program must generate a heuristic in order to determine how optimal a certain board state is to both min or max.
 
-This heuristic is generated as an evaluation function in the form of E(s) = M(s) - O(s) in which s is a board state, and M(s) and O(s) represent
+This heuristic is generated as an evaluation function in the form of:
+
+    E(s) = M(s) - O(s)
+
+in which s is a board state, and M(s) and O(s) represent
 the number of 'winning lines' available for both Max and Min respectively. A winning line is a vertical, horizontal or diagonal line in which all the characters are either
 blank, or either of min or max. This means that the board state is still a winning possibility for that player and so increases its value to that player.
 
