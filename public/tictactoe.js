@@ -30,12 +30,17 @@ function insertChar(elem){
             boardState.splice(elem,1,char);
             let newState = boardState.join('');
             boardState = newState
-            document.getElementById("whoseturn").innerHTML = boardState;
+            //document.getElementById("whoseturn").innerHTML = boardState;
             //if terminal state, display the game over screen
-            if (isGameOver()) {
-                document.getElementById("whoseturn").innerHTML = "Game Over";
+            if (isGameOver() === "x") {
+                document.getElementById("whoseturn").innerHTML = "Game Over - Player 1 Wins!";
                 gameOverDisplayed = true;
             }
+            if (isGameOver() === "o") {
+                document.getElementById("whoseturn").innerHTML = "Game Over - Player 2 Wins!"
+                gameOverDisplayed = true;
+            }
+
 
         }
     }
@@ -64,8 +69,11 @@ function resetBoard(){
 
 function isGameOver(){
     if(document.getElementsByClassName("cell")[5].innerHTML === "x"){
-        return true;
+        return "x";
     }
-    return false;
+    if(document.getElementsByClassName("cell")[5].innerHTML === "o"){
+        return "o";
+    }
+    return "-";
 
 }
