@@ -1,19 +1,34 @@
 var sampleState = "ooxoxx---";
 var maxsturn = true;
+
+var gameOverDisplayed = false;
 function insertChar(elem){
-    //don't let player's moves override moves that have already been taken
-    if(document.getElementsByClassName("cell")[elem].innerHTML === "") {
-        var char;
-        if (maxsturn) {
-            char = "x";
-            maxsturn = false;
-            document.getElementById("whoseturn").innerHTML = "Player 2's turn";
-        } else {
-            char = "o";
-            maxsturn = true;
-            document.getElementById("whoseturn").innerHTML = "Player 1's turn";
+    //if the game over screen is displayed, then reset the board with another click
+    if(gameOverDisplayed){
+        resetBoard();
+        resetBoard();
+        gameOverDisplayed = false;
+    }
+    else {
+        //don't let player's moves override moves that have already been taken
+        if (document.getElementsByClassName("cell")[elem].innerHTML === "") {
+            var char;
+            if (maxsturn) {
+                char = "x";
+                maxsturn = false;
+                document.getElementById("whoseturn").innerHTML = "Player 2's turn";
+            } else {
+                char = "o";
+                maxsturn = true;
+                document.getElementById("whoseturn").innerHTML = "Player 1's turn";
+            }
+            document.getElementsByClassName("cell")[elem].innerHTML = char;
+            if (isGameOver()) {
+                document.getElementById("whoseturn").innerHTML = "Game Over";
+                gameOverDisplayed = true;
+            }
+
         }
-        document.getElementsByClassName("cell")[elem].innerHTML = char;
     }
     //loadBoardState(sampleState);
 }
@@ -39,5 +54,9 @@ function resetBoard(){
 }
 
 function isGameOver(){
+    if(document.getElementsByClassName("cell")[5].innerHTML === "x"){
+        return true;
+    }
+    return false;
 
 }
