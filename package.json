@@ -1,0 +1,19 @@
+{
+  "name": "tictactoe-ui",
+  "version": "1.0.0",
+  "description": "user vs ai tictactoe game",
+  "main": "tictactoe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LachyP/TicTacToe-UI.git"
+  },
+  "author": "Lachlan Porter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LachyP/TicTacToe-UI/issues"
+  },
+  "homepage": "https://github.com/LachyP/TicTacToe-UI#readme"
+}
