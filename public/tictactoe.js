@@ -1,5 +1,6 @@
 var sampleState = "ooxoxx---";
 var maxsturn = true;
+var boardState = "---------"
 
 var gameOverDisplayed = false;
 function insertChar(elem){
@@ -23,6 +24,14 @@ function insertChar(elem){
                 document.getElementById("whoseturn").innerHTML = "Player 1's turn";
             }
             document.getElementsByClassName("cell")[elem].innerHTML = char;
+            //
+            boardState = boardState.split('');
+
+            boardState.splice(elem,1,char);
+            let newState = boardState.join('');
+            boardState = newState
+            document.getElementById("whoseturn").innerHTML = boardState;
+            //if terminal state, display the game over screen
             if (isGameOver()) {
                 document.getElementById("whoseturn").innerHTML = "Game Over";
                 gameOverDisplayed = true;
@@ -47,7 +56,7 @@ function loadBoardState(state){
 function resetBoard(){
     document.getElementById("whoseturn").innerHTML="Player 1's turn";
     maxsturn = true;
-
+    boardState = "---------";
     for(var i = 0; i < 9; i++){
         document.getElementsByClassName("cell")[i].innerHTML="";
     }
